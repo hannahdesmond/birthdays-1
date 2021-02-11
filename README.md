@@ -1,11 +1,4 @@
-### Quick Start
-
-Fork this repository to your github account and clone it to your machine. Then install the dependencies:
-```bash
-> git clone https://github.com/makersacademy/birthdays.git
-> cd birthdays
-> bundle
-```
+### Birthdays
 
 ### Instructions
 
@@ -24,11 +17,5 @@ More requirements:
 - Test-drive extracting a birthday class
 - Isolate your birthday list class using a mock for Birthday
 
-### TDD resources
-
-- https://github.com/makersacademy/course/blob/master/pills/tdd.md
-- https://github.com/makersacademy/course/blob/master/pills/tdd_quality_discussion.md
-
-### Mocking
-
-- https://relishapp.com/rspec/rspec-mocks/docs/basics/test-doubles
+### Progress
+- I have completed all of the requirements besides the mocking. 
