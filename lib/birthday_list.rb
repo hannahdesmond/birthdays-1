@@ -17,19 +17,13 @@ class BirthdayList
     @birthday_list.each.map {|bday| puts bday.flatten.join(", ")}
   end
 
-  def today
+  def today(age)
     date = Date.today
     todays_date = date.day.to_s + "-" + date.month.to_s
     @birthday_list.each do |entry|
       entry.each do |person, birthday|
-        puts "It's #{person}'s birthday today" if birthday == todays_date
+        puts "It's #{person}'s birthday today, they are #{age}" if birthday.slice(0..3) == todays_date
       end
     end
   end
 end
-
-    # iterate over @birthday_list
-    # if any value on @birthday_list is
-    # the same as today's date, return the name
-
-    # calculate the age

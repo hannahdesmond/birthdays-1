@@ -1,3 +1,5 @@
+require 'date'
+
 class Birthday
   attr_reader :person, :date
   def initialize(person, date)
@@ -7,7 +9,10 @@ class Birthday
 
   def entry
     birthday = { @person => @date }
-    # @person + ", " + @date
+  end
+
+  def age
+    Date.today.year - @date.slice(-4..-1).to_i
   end
 
 end

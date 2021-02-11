@@ -11,7 +11,12 @@ describe Birthday do
     birthday = Birthday.new('Hannah', '14-Feb')
     expect(birthday.date).to eq('14-Feb')
   end
-end
+  describe '#age' do
+    it "returns the person's age" do
+      birthday = Birthday.new('Hannah', '11-02-1986')
+      expect(birthday.age).to eq(35)
+    end
+  end
 
 describe BirthdayList do
   it 'has somewhere to store birthdays' do
@@ -28,11 +33,13 @@ describe BirthdayList do
     expect { subject.show_list }.to output("Hannah, 14-Feb\n").to_stdout
   end
   describe '#today' do
-    it "checks whether today's date is in birthday list" do
-      birthday = Birthday.new('Letty', '11-2').entry
+    it "checks whose birthday it is today" do
+      letty_bday = Birthday.new('Letty', '11-2-1991')
+      birthday = letty_bday.entry
       subject.new_entry(birthday)
-      expect { subject.today }.to output("It's Letty's birthday today\n").to_stdout
+      age = letty_bday.age
+      expect { subject.today(age) }.to output("It's Letty's birthday today, they are 30\n").to_stdout
     end
   end
-
+end
 end
