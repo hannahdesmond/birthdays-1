@@ -17,9 +17,6 @@ describe BirthdayList do
   it 'has somewhere to store birthdays' do
     expect(subject.birthday_list).to eq([])
   end
-  it 'responds to #new_entry' do
-    expect(subject).to respond_to(:new_entry).with(1).argument
-  end
   it 'adds the new entry to the list' do
     birthday = Birthday.new('Hannah', '14-Feb').entry
     subject.new_entry(birthday)
@@ -30,11 +27,12 @@ describe BirthdayList do
     subject.new_entry(birthday)
     expect { subject.show_list }.to output("Hannah, 14-Feb\n").to_stdout
   end
-  it "creates a string of today's date" do
-    date = Date.today
-    date_str = date.day.to_s + "-" + date.month.to_s
-    expect(subject.today).to eq(date_str)
+  describe '#today' do
+    it "checks whether today's date is in birthday list" do
+      birthday = Birthday.new('Letty', '11-2').entry
+      subject.new_entry(birthday)
+      expect { subject.today }.to output("It's Letty's birthday today\n").to_stdout
+    end
   end
-  # it "checks whether today's date is in birthday list"
 
 end
