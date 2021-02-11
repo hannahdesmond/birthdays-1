@@ -11,10 +11,6 @@ describe Birthday do
     birthday = Birthday.new('Hannah', '14-Feb')
     expect(birthday.date).to eq('14-Feb')
   end
-  it 'returns the birthday as a string' do
-    birthday = Birthday.new('Hannah', '14-Feb')
-    expect(birthday.entry).to be_a(String)
-  end
 end
 
 describe BirthdayList do
@@ -39,6 +35,6 @@ describe BirthdayList do
     date_str = date.day.to_s + "-" + date.month.to_s
     expect(subject.today).to eq(date_str)
   end
-
+  # it "checks whether today's date is in birthday list"
 
 end

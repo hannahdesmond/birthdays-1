@@ -14,7 +14,7 @@ class BirthdayList
   end
 
   def show_list
-    puts @birthday_list
+    @birthday_list.each.map {|bday| puts bday.flatten.join(", ")}
   end
 
   def today

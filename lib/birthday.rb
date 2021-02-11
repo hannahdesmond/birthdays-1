@@ -6,7 +6,8 @@ class Birthday
   end
 
   def entry
-    @person + ", " + @date
+    birthday = { @person => @date }
+    # @person + ", " + @date
   end
 
 end
