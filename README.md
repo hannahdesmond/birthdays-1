@@ -19,3 +19,14 @@ More requirements:
 
 ### Progress
 - I have completed all of the requirements besides the mocking. 
+
+
+### Coach Feedback
+
+If you wanted to tidy up your tests a little bit, you could declare  subject(:birthday) { Birthday.new(etc etc) } at the top and then just refer to subject in each test.
+Good unit testing, nice work. They test the behaviour of your app really well.
+Could define these test set-up lines in a let instead of a before each but either works (just a small thing with no major difference either way: let will redefine these things for each test automatically)
+Varied testing, eg. Checking that array with a birthday exists in the context of an array of birthdays is good
+In your Birthday class, it's my understanding that the person and date (of their birthday) would be passed in at initialisation. So I'm not sure if the 'entry' method is needed here - unless I am missing the purpose of it (let me know!)
+I think this adheres well to Single Responsibility Principle: The Birthday represents each individual birthday, and the Birthday List class represents the collator / printer.
+One small piece of feedback on the name of BirthdayList is that I think it could be a little bit more descriptive: it not only contains an array of birthdays but it's also responsible for adding birthdays, showing the list and calculating the age. So maybe something that describes a birthday greeter?
